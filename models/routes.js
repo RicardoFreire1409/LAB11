@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://jorftama:180522@cluster0.yercuev.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/router_db', {
     useNewUrlParser: true,
 },
+
 (err) => {
     if (!err) {
         console.log('Connection suceeded');
